@@ -2,5 +2,7 @@
     <aura:attribute name="nombre" type="String" default="MUNDO!"/>
     <h1>Hola {!v.nombre}</h1>
     <lightning:input type="text" label="Nombre" value="{!v.nombre}"/>
+
+    <!--Desde este accinador de boton llamamos al archivo de javascript pruebaController.js a la variable saludar-->
     <lightning:button label="Saludar" onclick="{!c.saludar}"/>
 </aura:component>	
