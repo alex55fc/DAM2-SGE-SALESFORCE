@@ -1,0 +1,14 @@
+<aura:component>
+
+<aura:attribute name="mensaje" type="String"/>
+<aura:attribute name="lista" type="String[]" default="['uno','dos','tres']"/>
+<span>ultimo elemento añadido es {!v.mensaje}</span>
+<table>
+    <aura:iteration items="{!v.lista}" var="elemento">
+        <tr>
+            <td>{!elemento}</td>
+        </tr>
+    </aura:iteration>
+</table>
+<input type="text" value="limpiar lista" onclick="{!c.clearList}"/>
+</aura:component>	
