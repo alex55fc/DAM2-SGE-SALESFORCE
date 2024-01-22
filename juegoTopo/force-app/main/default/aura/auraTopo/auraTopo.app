@@ -9,4 +9,5 @@
 <c:componentTopo/>
 <c:componentTopo/>
 <c:componentTopo/>
+<c:componentMarcador/>
 </aura:application>	
