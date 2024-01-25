@@ -20,7 +20,8 @@
         } */
                 //var number =Math.random() ;
         var randomNumberGenerator = cmp.get("c.random");
-
+        
+        //se llama a la funcion random del apex controller
         randomNumberGenerator.setCallback(this, function(response){
             var state = response.getState();
             if(state === "SUCCESS"){
@@ -57,13 +58,4 @@
         evt.fire();
     },
 
-    applyCSS: function(cmp, event) {
-        var cmpTarget = cmp.find('changeIt');
-        $A.util.addClass(cmpTarget, 'changeMe');
-    },
-    
-    removeCSS: function(cmp, event) {
-        var cmpTarget = cmp.find('changeIt');
-        $A.util.removeClass(cmpTarget, 'changeMe');
-    }
 })
