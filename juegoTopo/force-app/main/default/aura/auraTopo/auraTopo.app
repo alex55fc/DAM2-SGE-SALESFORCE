@@ -10,5 +10,9 @@
 <c:componentTopo/>
 <c:componentTopo/>
 <c:componentMarcador/>
-
+<div/>
+<div/>
+<div/>
+<div/>
+<c:cmpTablaController/>
 </aura:application>	

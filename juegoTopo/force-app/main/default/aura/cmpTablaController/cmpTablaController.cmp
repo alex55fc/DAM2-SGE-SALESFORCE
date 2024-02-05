@@ -1,0 +1,21 @@
+<aura:component controller="RandomApex">
+    <aura:attribute name="puntuaciones" type="Account[]"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.puntuaciones}" var="puntuacion">
+                <tr>
+                    <td>{!puntuacion.Name}</td>
+                    <!--BillingAdress es un campo de la tabla Account de Salesforce -->
+                    <td>{!puntuacion.BillingCity}</td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>	
