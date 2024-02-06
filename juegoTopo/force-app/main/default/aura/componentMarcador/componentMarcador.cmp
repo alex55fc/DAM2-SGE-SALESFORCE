@@ -4,4 +4,6 @@
 	tu marcador es {!v.marcador}
 	<!--esto es para que el usuario pueda guardar su score-->
 	<input type="button" onclick="{!c.guardarScore}"/>
+	<!--esto es para que el usuario pueda guardar su nombre-->
+	nombre del judador: <input type="text" aura:id="nombrejugador" value=""/>
 </aura:component>	
