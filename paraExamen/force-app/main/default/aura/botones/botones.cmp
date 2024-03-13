@@ -1,0 +1,16 @@
+<aura:component>
+<aura:attribute name="cadenaClick" type="List" default="[]" />
+
+
+<lightning:button aura:id="button1" label="0" onclick="{!c.botonClicked}"/>
+<lightning:button aura:id="button1" label="1" onclick="{!c.botonClicked}"/>
+
+<div class="container">
+    <h1>Secuencias de Clicks</h1>
+        <aura:iteration items="{!v.cadenaClick}" var="sequence" indexVar="index">
+            <div>
+                <p>Secuencia {!index + 1}: {!sequence}</p>
+            </div>
+        </aura:iteration>
+</div>
+</aura:component>	
