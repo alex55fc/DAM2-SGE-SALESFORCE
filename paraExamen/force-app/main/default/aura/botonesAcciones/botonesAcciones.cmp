@@ -1,0 +1,9 @@
+<aura:component>
+
+    <lightning:button  label="grabar" onclick="{!c.startRecording}"/>
+    <lightning:button  label="stop" onclick="{!c.stopRecording}"/>
+    <lightning:button  label="play" onclick="{!c.startPlay}"/>
+    <lightning:button  label="save" onclick="{!c.safeRecording}"/>
+    <lightning:button  label="clear" onclick="{!c.clearRecording}"/>
+
+</aura:component>	

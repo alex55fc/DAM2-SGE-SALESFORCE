@@ -1,8 +1,12 @@
-<aura:component>
+<aura:component controller="ApexClass">
 <aura:attribute name="cadenaClick" type="List" default="[]" />
+<aura:handler event="c:gameEvent" action="{!c.handleGameEvent}"/>
 
+<aura:attribute name="isRecording" type="Boolean" default="false" />
 
-<lightning:button aura:id="button1" label="0" onclick="{!c.botonClicked}"/>
+<aura:attribute name="secuenciasCadenaClick" type="List" default="[]" />
+
+<lightning:button aura:id="button0" label="0" onclick="{!c.botonClicked}"/>
 <lightning:button aura:id="button1" label="1" onclick="{!c.botonClicked}"/>
 
 <div class="container">
