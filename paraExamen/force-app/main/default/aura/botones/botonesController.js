@@ -58,6 +58,10 @@
             $A.enqueueAction(action);
 
         }
+        else if (action === "clearRecording"){
+            component.set("v.doInitSecuenciaCadena", []);
+            component.set("v.secuenciasCadenaDisplay", []);
+        }
     },  
     doInit : function(component, event, helper) {
         var action = component.get("c.getListSequence");
