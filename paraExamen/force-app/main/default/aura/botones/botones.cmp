@@ -1,19 +1,37 @@
 <aura:component controller="ApexClass">
-<aura:attribute name="cadenaClick" type="List" default="[]" />
-<aura:handler event="c:gameEvent" action="{!c.handleGameEvent}"/>
-
+<!--Aqui tendremos las secuencias guardadas en la base de daos, para que al iniciar nos las muestre-->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+<!--Y esta es la cadena que nos servira para ello-->
+<aura:attribute name="doInitSecuenciaCadena" type="List" default="[]" />
 <aura:attribute name="isRecording" type="Boolean" default="false" />
 
-<aura:attribute name="secuenciasCadenaClick" type="List" default="[]" />
+<!--En esta CADENA se va grabando los clicks que estamos haciendo a los botones, pero no lo muestra por pantalla-->
+<aura:attribute name="cadenaClick" type="String" default="" />
+<!--Esta cadena si que es la que mostramos en pantalla de cada secuencia-->
+<aura:attribute name="secuenciasCadenaDisplay" type="List" default="[]" />
+
+<aura:handler event="c:gameEvent" action="{!c.handleGameEvent}"/>
+
+<!--Esta lista la usaremos para guardar las cadenas que se guardaron con el stop en la base de datos -->
+<aura:attribute name="secuenciasCadenaParaGuardar" type="List" default="[]" />
 
 <lightning:button aura:id="button0" label="0" onclick="{!c.botonClicked}"/>
 <lightning:button aura:id="button1" label="1" onclick="{!c.botonClicked}"/>
 
 <div class="container">
     <h1>Secuencias de Clicks</h1>
-        <aura:iteration items="{!v.cadenaClick}" var="sequence" indexVar="index">
+        <aura:iteration items="{!v.secuenciasCadenaDisplay}" var="sequence" indexVar="index">
             <div>
                 <p>Secuencia {!index + 1}: {!sequence}</p>
+            </div>
+        </aura:iteration>
+</div>
+<br/> <br/>
+<div class="container">
+    <h1>Secuencias guardadas en la base de datos</h1>
+        <aura:iteration items="{!v.doInitSecuenciaCadena}" var="sequence" indexVar="index">
+            <div>
+                <p>Secuencia {!index + 1}: {!sequence.Name}</p>
             </div>
         </aura:iteration>
 </div>

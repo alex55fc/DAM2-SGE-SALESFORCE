@@ -21,6 +21,7 @@ public with sharing class ApexClass {
     }
     @AuraEnabled
     public static Void insertSequence(String newSequence) {
+
         Account a = new Account(Name=newSequence);
         insert a;
     }
