@@ -57,6 +57,25 @@
             });
             $A.enqueueAction(action);
 
+        }   
+        else if (action == "startPlay"){
+            console.log("Iniciando reproducción de las secuencias por consola");
+            var secuenciasGrabadas = component.get("v.secuenciasCadenaParaGuardar");
+            var index = 0;
+        
+            if (secuenciasGrabadas && Array.isArray(secuenciasGrabadas)) {
+                function reproducirSecuencia() {
+                    if (index < secuenciasGrabadas.length) {
+                        console.log("Secuencia " + (index + 1) + ": " + secuenciasGrabadas[index]);
+                        index++; // Incrementa el índice después de imprimir el console.log
+                        setTimeout(reproducirSecuencia, 3000); // Llama a reproducirSecuencia después de 1 segundo
+                    }
+                }
+        
+                setTimeout(reproducirSecuencia, 3000); // Llama a reproducirSecuencia por primera vez después de 1 segundo
+            } else {
+                console.log("No hay secuencias grabadas disponibles.");
+            }
         }
         else if (action === "clearRecording"){
             component.set("v.doInitSecuenciaCadena", []);
