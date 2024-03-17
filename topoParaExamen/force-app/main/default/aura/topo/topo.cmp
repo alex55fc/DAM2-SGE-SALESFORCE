@@ -1,0 +1,8 @@
+<aura:component  controller="topoApex">
+    <!--Aqui veremos si es topo al inicar el juego-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute type="Boolean" name="isTopo" />
+    
+    <lightning:button aura:id="topoButton" label="topo" onclick="{!c.topoClicked}"/>
+     
+</aura:component>	
