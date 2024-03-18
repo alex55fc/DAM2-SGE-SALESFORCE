@@ -1,6 +1,9 @@
-<aura:component>
+<aura:component controller="topoApex">
     <aura:handler event="c.topoEvent2" action="{!c.manejarEvento}"/>
     <aura:attribute name="marcador" type="Integer" default="0"/>
     Tu marcadores es: {!v.marcador}
-    
+    <br></br>
+    Nombre del jugador<input type="text" aura:id="nombreJugador" value=""/>
+    <lightning:button aura:id="insertPlayer" label="Save core" onclick="{!c.saveScore}"/>
+
 </aura:component>	
